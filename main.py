@@ -1,9 +1,22 @@
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.action_chains import ActionChains
+import time
 
-driver = webdriver.Chrome()
-driver.get('https://api.hypixel.net/player?key=996a0ea0-ad8a-460d-9e19-a5bb9623acb6&uuid=d62192a9-a142-42dd-bc81-b400843430f0')
-#searchbox = driver.find_element_by_xpath('//*[@id="search"]')
-#searchbox.send_keys('Bad girls')
+PATH = 'C:\Program Files (x86)\chromedriver.exe'
 
-#searchButton = driver.find_element_by_xpath('//*[@id="search-icon-legacy"]')
-#searchButton.click()
+driver = webdriver.Chrome(PATH)
+driver.get('https://api.hypixel.net/player?key=e1fe1b8e-0a39-48ee-a9c9-be06ea8ff8b7&uuid=d6%27)
+#page = driver.find_element_by_xpath('/html/body')
+time.sleep(1)
+for i in range(3):
+    updates = driver.find_elements_by_xpath("/html/body")
+    driver.refresh()
+    if updates == updates :
+        print("No change")
+    else :
+        print("Change")
+    time.sleep(1)
